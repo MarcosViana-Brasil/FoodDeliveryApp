@@ -5,6 +5,13 @@ const screens = {
     cart: "Cart",
     favourite: "Favourite",
     notification: "Notification",
+    my_wallet: "My Wallet",
+    track: "Track Your Order",
+    coupons: "Coupons",
+    settings: 'Settings',
+    invite: "Invite a Friend",
+    help: 'Help Center',
+    logout: 'Logout'
 }
 
 const bottom_tabs = [
