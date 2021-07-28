@@ -9,3 +9,4 @@ npm install react-redux redux redux-thunk
 npm install react-native-linear-gradient --save
 
 npm install --save @ptomasroos/react-native-multi-slider
+
