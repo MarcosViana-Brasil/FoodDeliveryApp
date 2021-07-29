@@ -12,7 +12,10 @@ const Drawer = createDrawerNavigator()
 
 const CustomDrawerItem = ({ label, icon, isFocused, onPress }) => {
   return (
-    <TouchableOpacity style={styles.customDrawerItem, { backgroundColor: isFocused ? COLORS.transparentBlack1 : null }} onPress={onPress}>
+    <TouchableOpacity 
+      style={styles.customDrawerItem, { backgroundColor: isFocused ? COLORS.transparentBlack1 : null }} 
+      onPress={onPress}
+    >
       <Image source={icon} style={{width: 20, height: 20, tintColor: COLORS.white}} />
       <Text style={{marginLeft: 15, color: COLORS.white, ...FONTS.body3}}>{label}</Text>
     </TouchableOpacity>
@@ -51,9 +54,30 @@ const CustomDrawerContent = ({ navigation, selectedTab, setSelectedTab }) => {
             }}
           />
 
-          <CustomDrawerItem label={constants.screens.notification} icon={icons.notification} />
+          <CustomDrawerItem 
+            label={constants.screens.my_wallet} 
+            icon={icons.wallet} 
+          />
 
-          <CustomDrawerItem label={constants.screens.favourite} icon={icons.favourite} />
+          <CustomDrawerItem 
+            label={constants.screens.notification} 
+            icon={icons.notification} 
+            isFocus={selectedTab == constants.screens.notification} 
+            onPress={() => {
+              setSelectedTab(constants.screens.notification)
+              navigation.navigate('MainLayout')
+            }}
+          />
+
+          <CustomDrawerItem 
+            label={constants.screens.favourite} 
+            icon={icons.favourite} 
+            isFocus={selectedTab == constants.screens.favourite} 
+            onPress={() => {
+              setSelectedTab(constants.screens.favourite)
+              navigation.navigate('MainLayout')
+            }}
+          />
 
           {/* line divider */}
           <View style={styles.linedivider} />
